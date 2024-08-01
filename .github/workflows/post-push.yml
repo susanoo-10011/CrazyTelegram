@@ -1,0 +1,38 @@
+name: Post push testing
+
+run-name: ${{ github.actor }} is testing post push 🚀
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: |
+          cd frontend
+          npm install
+      - name: build project
+        run: |
+          cd frontend
+          npm run build
+      - name: lint code
+        run: |
+          cd frontend
+          npm run lint
+      - name: format code
+        run: |
+          cd frontend
+          npm run format
