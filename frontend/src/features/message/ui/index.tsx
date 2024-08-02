@@ -7,11 +7,15 @@ import axios from "axios";
 type MessageType = {
   id: string;
   userid: string;
-  message: string;
+  text: string;
   time: Date;
   replyId: string;
+};
+
+type MessageParamsType = {
+  message: MessageType;
   own?: boolean;
-  position?: "top" | "middle" | "bottom";
+  type?: "top" | "middle" | "bottom" | "single";
 };
 
 type UserType = {
@@ -21,16 +25,12 @@ type UserType = {
 };
 
 export function Message({
-  id,
-  userId,
   message,
-  time,
-  replyId,
   own = false,
-  position = "top",
-}: MessageType) {
+  type = "single",
+}: MessageParamsType) {
   const [user, setUser] = useState<UserType>({
-    id: id,
+    id: "0",
     name: "Username",
     imgUrl: "",
   });
@@ -51,27 +51,36 @@ export function Message({
       }
     }
 
-    fetchUser(id);
-  }, [id]);
+    fetchUser(message.id);
+  }, [message.id]);
 
   return (
     <>
       {user && (
-        <div className={styles.message}>
-          {!own && <img className={styles.pfp} src="" alt="" />}
+        <div
+          className={`${styles.message} ${own ? styles.right : styles.left}
+           ${styles[type]}`}
+        >
+          {!own && (type === "bottom" || type === "single") && (
+            <img
+              className={styles.pfp}
+              src="https://img.freepik.com/free-vector/dark-black-background-design-with-stripes_1017-38064.jpg"
+              alt=""
+            />
+          )}
 
-          <div className={`${styles.content} ${own ? styles.right : ""}`}>
-            {position === "top" && (
+          <div className={`${styles.content}`}>
+            {!own && type === "top" && (
               <div className={styles.first_row}>
                 <div className={styles.name}>{user.name}</div>
                 <button className={styles.reply}>Reply</button>
               </div>
             )}
-            <div className={styles.text}>{message}</div>
-
-            <div className={styles.time}>{formatTime(time)}</div>
-
-            <div className={styles.tail}></div>
+            <div className={styles.text}>{message.text}</div>
+            <div className={styles.time}>{formatTime(message.time)}</div>
+            {(type === "bottom" || type === "single") && (
+              <div className={styles.tail}></div>
+            )}
           </div>
         </div>
       )}
