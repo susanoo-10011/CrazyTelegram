@@ -1,0 +1,54 @@
+package ru.CrazyTalegram.MessageServer.Service;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import ru.CrazyTalegram.MessageServer.Model.MongoDBEntities.ChatRoom;
+import ru.CrazyTalegram.MessageServer.Repository.ChatRoomRepository;
+
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+public class ChatRoomService {
+
+    private final ChatRoomRepository _chatRoomRepository;
+    private final ChatRoomRepository chatRoomRepository;
+
+    public Optional<String> getChatRoomId(String senderId, String recipientId, boolean createNewRoomIfNotExists) {
+
+        return _chatRoomRepository.findBySenderIdAndRecipientId(senderId, recipientId)
+                .map(ChatRoom::getChatId)
+                .or(() -> {
+                    if (createNewRoomIfNotExists){
+                        var chatId = createChatId(senderId, recipientId);
+
+                        return Optional.of(chatId);
+                    }
+
+                    return Optional.empty();
+                });
+
+    }
+
+    private String createChatId(String senderId, String recipientId) {
+
+        var chatId = String.format("%s_%s", senderId, recipientId);
+
+        ChatRoom senderRecipient = ChatRoom.builder()
+                .chatId(chatId)
+                .senderId(senderId)
+                .recipientId(recipientId)
+                .build();
+
+        ChatRoom recipientSender = ChatRoom.builder()
+                .chatId(chatId)
+                .senderId(senderId)
+                .recipientId(recipientId)
+                .build();
+
+         chatRoomRepository.save(senderRecipient);
+         chatRoomRepository.save(recipientSender);
+
+        return chatId;
+    }
+}

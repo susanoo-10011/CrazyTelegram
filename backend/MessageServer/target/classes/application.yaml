@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/MessengerDataBase
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      username: alibou
+      password: alibou
+      additional-hosts: localhost
+      port: 27017
+      database: chat_app
+      authentication-database: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: auth_schema
+
+server:
+  port: 8088
