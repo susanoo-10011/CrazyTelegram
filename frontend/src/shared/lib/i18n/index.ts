@@ -3,7 +3,6 @@ import { initReactI18next } from "react-i18next";
 
 import { resources } from "./translations";
 
-// eslint-disable-next-line import/no-named-as-default-member
 i18next.use(initReactI18next).init({
   resources,
   lng: "en",

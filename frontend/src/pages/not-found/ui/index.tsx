@@ -1,5 +1,6 @@
+import Layout from "@app/layout";
+
 import styles from "./NotFoundPage.module.scss";
-import Layout from "../../../app/layout";
 
 export const NotFoundPage = () => {
   return (

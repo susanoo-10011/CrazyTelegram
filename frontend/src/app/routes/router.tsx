@@ -1,5 +1,5 @@
-import { MainPage } from "../../pages/main";
-import { NotFoundPage } from "../../pages/not-found";
+import { MainPage } from "@pages/main";
+import { NotFoundPage } from "@pages/not-found";
 
 export const routes = [
   {
