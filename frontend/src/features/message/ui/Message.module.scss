@@ -1,7 +1,7 @@
 $primary: rgb(43, 43, 43);
 $meta: rgb(121, 121, 121);
 
-$r-sm: 0.3rem;
+$r-sm: 0.4rem;
 
 .message {
   margin: 0.5rem;
@@ -160,6 +160,22 @@ $r-sm: 0.3rem;
           transform: translateX(12px);
           &::after {
             transform-origin: bottom left;
+          }
+        }
+      }
+    }
+  }
+
+  &.single {
+    &.left {
+      .content {
+        margin-left: 0;
+        border-bottom-left-radius: 0;
+        .tail {
+          left: 0;
+          transform: translateX(-12px);
+          &::after {
+            transform-origin: bottom right;
           }
         }
       }

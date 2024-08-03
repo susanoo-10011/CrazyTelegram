@@ -14,6 +14,8 @@ export const MainPage = () => {
           time: new Date(),
           replyId: "0",
         }}
+        author={{ id: "0", name: "Братан", imgUrl: "" }}
+        onReply={(id: string) => console.log(id)}
         type="top"
       ></Message>
       <Message
@@ -24,16 +26,20 @@ export const MainPage = () => {
           time: new Date(),
           replyId: "0",
         }}
+        author={{ id: "0", name: "Братан", imgUrl: "" }}
+        onReply={(id: string) => console.log(id)}
         type="middle"
       ></Message>
       <Message
         message={{
           id: "0",
           userid: "0",
-          text: "Текст (от лат. textus — ткань; сплетение, сочетание) — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.",
+          text: "В истерике кружилась мама Валя На заднем фоне замер папа Толя В радиусе метра воцарился жесточайший хаос Когда всем понятно стало: сын остался без диплома",
           time: new Date(),
           replyId: "0",
         }}
+        author={{ id: "0", name: "Братан", imgUrl: "" }}
+        onReply={(id: string) => console.log(id)}
         type="bottom"
       ></Message>
       <Message
@@ -44,7 +50,8 @@ export const MainPage = () => {
           time: new Date(),
           replyId: "0",
         }}
-        own
+        author={{ id: "current user", name: "username", imgUrl: "" }}
+        onReply={(id: string) => console.log(id)}
         type="top"
       ></Message>
       <Message
@@ -55,8 +62,21 @@ export const MainPage = () => {
           time: new Date(),
           replyId: "0",
         }}
-        own
+        author={{ id: "current user", name: "username", imgUrl: "" }}
+        onReply={(id: string) => console.log(id)}
         type="bottom"
+      ></Message>
+      <Message
+        message={{
+          id: "0",
+          userid: "0",
+          text: "согласен",
+          time: new Date(),
+          replyId: "0",
+        }}
+        author={{ id: "0", name: "Братан", imgUrl: "" }}
+        onReply={(id: string) => console.log(id)}
+        type="single"
       ></Message>
     </Layout>
   );
