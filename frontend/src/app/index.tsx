@@ -1,6 +1,6 @@
 import "./styles/index.scss";
 
-import "../shared/lib/i18n";
+import "@shared/lib/i18n";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 

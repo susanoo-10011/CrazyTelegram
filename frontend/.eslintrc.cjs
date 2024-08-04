@@ -16,7 +16,31 @@ module.exports = {
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh", "prettier", "import"],
+  settings: {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"],
+          ["@app", "./src/app"],
+          ["@pages", "./src/pages"],
+          ["@widgets", "./src/widgets"],
+          ["@features", "./src/features"],
+          ["@entities", "./src/entities"],
+          ["@shared", "./src/shared"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+      }
+    }
+  },
   rules: {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "**/../*"
+        ]
+      }
+    ],
     semi: ["error", "always"],
     "linebreak-style": ["off"],
     quotes: ["error", "double"],

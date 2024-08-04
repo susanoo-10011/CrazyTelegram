@@ -1,3 +1,4 @@
+import Layout from "@app/layout";
 import styles from "./MainPage.module.scss";
 import Layout from "../../../app/layout";
 import { Message } from "../../../features/message/index";
