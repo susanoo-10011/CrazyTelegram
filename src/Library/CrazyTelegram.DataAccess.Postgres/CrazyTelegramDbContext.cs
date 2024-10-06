@@ -6,11 +6,15 @@ using Microsoft.Extensions.Options;
 
 namespace CrazyTelegram.DataAccess.Postgres
 {
-    public class CrazyTelegramDbContext(DbContextOptions<CrazyTelegramDbContext> options) : DbContext(options)
+    public class CrazyTelegramDbContext : DbContext
     {
-        // add-migration create -contex CrazyTelegramDbContext \\
+        // add-migration update (update-это название миграции) -contex CrazyTelegramDbContext \\
 
         //-----------------------------------------------------\\
+        public CrazyTelegramDbContext(DbContextOptions<CrazyTelegramDbContext> options) : base(options)
+        {
+            Database.Migrate();
+        }
 
         public DbSet<UserEntity> Users { get; set; }
 

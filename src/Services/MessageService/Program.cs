@@ -22,7 +22,6 @@ namespace MessageService
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -33,8 +32,14 @@ namespace MessageService
 
             app.UseAuthorization();
 
-
             app.MapControllers();
+
+            // вызываем конструктор CrazyTelegramDbContext чтобы применить наши миграции | скорее всего временно
+            var context = new CrazyTelegramDbContext(
+                new DbContextOptionsBuilder<CrazyTelegramDbContext>()
+                .UseNpgsql(configuration.GetConnectionString(nameof(CrazyTelegramDbContext)))
+                .Options);
+
 
             app.Run();
         }

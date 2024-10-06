@@ -33,8 +33,13 @@ namespace AuthenticationService
 
             app.UseAuthorization();
 
-
             app.MapControllers();
+
+            // вызываем конструктор CrazyTelegramDbContext чтобы применить наши миграции | скорее всего временно
+            var context = new CrazyTelegramDbContext(
+                new DbContextOptionsBuilder<CrazyTelegramDbContext>()
+                .UseNpgsql(configuration.GetConnectionString(nameof(CrazyTelegramDbContext)))
+                .Options);
 
             app.Run();
         }
