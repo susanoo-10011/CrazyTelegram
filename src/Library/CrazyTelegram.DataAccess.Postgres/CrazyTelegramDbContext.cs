@@ -8,6 +8,10 @@ namespace CrazyTelegram.DataAccess.Postgres
 {
     public class CrazyTelegramDbContext(DbContextOptions<CrazyTelegramDbContext> options) : DbContext(options)
     {
+        // add-migration create -contex CrazyTelegramDbContext \\
+
+        //-----------------------------------------------------\\
+
         public DbSet<UserEntity> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
