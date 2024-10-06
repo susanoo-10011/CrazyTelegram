@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationService", "src\Services\AuthenticationService\AuthenticationService.csproj", "{BF3DBF9E-AE9A-4292-BB52-BFF526DF50F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.AuthenticationService", "src\Services\AuthenticationService\CrazyTelegram.AuthenticationService.csproj", "{BF3DBF9E-AE9A-4292-BB52-BFF526DF50F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageService", "src\Services\MessageService\MessageService.csproj", "{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.MessageService", "src\Services\MessageService\CrazyTelegram.MessageService.csproj", "{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyTelegram.DataAccess.Postgres", "src\Library\CrazyTelegram.DataAccess.Postgres\CrazyTelegram.DataAccess.Postgres.csproj", "{B9A3AF55-B075-48D9-B744-55B4A70D47AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
