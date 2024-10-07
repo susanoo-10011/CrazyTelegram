@@ -14,7 +14,7 @@ namespace CrazyTelegram.DataAccess.Postgres
         //-----------------------------------------------------\\
         public CrazyTelegramDbContext(DbContextOptions<CrazyTelegramDbContext> options) : base(options)
         {
-            Database.Migrate();
+           // Database.Migrate();
         }
 
         public DbSet<UserEntity> Users { get; set; }
