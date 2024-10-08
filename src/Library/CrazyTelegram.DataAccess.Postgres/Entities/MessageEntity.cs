@@ -3,21 +3,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CrazyTelegram.DataAccess.Postgres.Entities
 {
+    [Table("messages")]
     public class MessageEntity
     {
-        public Guid Id { get; set; }
-        public Guid ChatId { get; set; }
-        public Guid SenderId { get; set; }
+        [Key]
+
+        public int Id { get; set; }
+
         [Required]
-        public string Content { get; set; }
+        [Column("subject")]
+        public string Subject { get; set; }
 
-        [Timestamp]
-        public DateTime SentAt { get; set; } = DateTime.UtcNow;
+        [Required]
+        [Column("creator_id")]
+        [ForeignKey("User")]
+        public int CreatorId { get; set; }
 
-        [ForeignKey("ChatId")]
-        public ChatEntity Chat { get; set; }
+        [Required]
+        [Column("message_body")]
+        public string MessageBody { get; set; }
 
-        [ForeignKey("SenderId")]
-        public UserEntity Sender { get; set; }
+        [Column("create_date")]
+        public DateTime CreateDate { get; set; }
+
+        public UserEntity User { get; set; }
     }
 }
