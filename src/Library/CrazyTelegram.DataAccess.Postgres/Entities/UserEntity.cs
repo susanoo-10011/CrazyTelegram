@@ -1,15 +1,32 @@
-﻿namespace CrazyTelegram.DataAccess.Postgres.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CrazyTelegram.DataAccess.Postgres.Entities
 {
+    [Table("users")]
     public class UserEntity
     {
-        public Guid Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
+        [Required]
+        [Column("user_name")]
         public string UserName { get; set; } = string.Empty;
 
+        [Required]
+        [Column("password")]
         public string Password { get; set; } = string.Empty;
 
+        [Required]
+        [Column("email")]
         public string Email { get; set; } = string.Empty;
 
+        [Required]
+        [Column("login")]
+        public string Login { get; set; } = string.Empty;
+
+        [Timestamp]
+        [Column("create_at")]
         public DateTime CreatedAt { get; set; } = DateTime.MinValue;
 
     }
