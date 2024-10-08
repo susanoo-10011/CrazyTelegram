@@ -18,10 +18,13 @@ namespace CrazyTelegram.DataAccess.Postgres
         }
 
         public DbSet<UserEntity> Users { get; set; }
+        public DbSet<ChatEntity> Chats { get; set; }
+        public DbSet<ChatMemberEntity> ChatMembers { get; set; }
+        public DbSet<MessageEntity> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            //modelBuilder.ApplyConfiguration(new UserConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

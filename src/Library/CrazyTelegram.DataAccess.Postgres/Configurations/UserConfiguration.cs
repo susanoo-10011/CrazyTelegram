@@ -10,6 +10,8 @@ namespace CrazyTelegram.DataAccess.Postgres.Configurations
         {
             builder
                 .HasKey(e => e.Id);
+
+
         }
     }
 }
