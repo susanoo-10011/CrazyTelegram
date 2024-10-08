@@ -28,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\CrazyTelegram.Application\CrazyTelegram.Application.csproj" />
+    <ProjectReference Include="..\..\Core\CrazyTelegram.Core\CrazyTelegram.Core.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\CrazyTelegram.Infrastructure\CrazyTelegram.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Library\CrazyTelegram.DataAccess.Postgres\CrazyTelegram.DataAccess.Postgres.csproj" />
   </ItemGroup>
 

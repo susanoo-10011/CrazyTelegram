@@ -40,7 +40,6 @@ namespace MessageService
                 .UseNpgsql(configuration.GetConnectionString(nameof(CrazyTelegramDbContext)))
                 .Options);
 
-
             app.Run();
         }
     }

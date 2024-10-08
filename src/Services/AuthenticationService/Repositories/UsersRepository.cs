@@ -1,6 +1,10 @@
+
+
+using CrazyTelegram.DataAccess.Postgres;
+
 public class UsersRepository
 {
-    public UsersRepository(LearningDbContext context, IMapper mapper)
+    public UsersRepository(CrazyTelegramDbContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

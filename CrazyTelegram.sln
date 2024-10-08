@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyTelegram.Core", "src\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyTelegram.Application", "src\Application\CrazyTelegram.Application\CrazyTelegram.Application.csproj", "{86841D33-17E2-4F80-925E-6C73D81D3D4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyTelegram.Infrastructure", "src\Infrastructure\CrazyTelegram.Infrastructure\CrazyTelegram.Infrastructure.csproj", "{06BBE047-A1E1-43DE-A658-0505C115D61D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{86841D33-17E2-4F80-925E-6C73D81D3D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86841D33-17E2-4F80-925E-6C73D81D3D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86841D33-17E2-4F80-925E-6C73D81D3D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06BBE047-A1E1-43DE-A658-0505C115D61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06BBE047-A1E1-43DE-A658-0505C115D61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06BBE047-A1E1-43DE-A658-0505C115D61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06BBE047-A1E1-43DE-A658-0505C115D61D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
