@@ -9,11 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.MessageServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.DataAccess.Postgres", "src\Library\CrazyTelegram.DataAccess.Postgres\CrazyTelegram.DataAccess.Postgres.csproj", "{B9A3AF55-B075-48D9-B744-55B4A70D47AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyTelegram.Core", "src\Core\CrazyTelegram.Core\CrazyTelegram.Core.csproj", "{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.Core", "src\Core\CrazyTelegram.Core\CrazyTelegram.Core.csproj", "{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyTelegram.Application", "src\Application\CrazyTelegram.Application\CrazyTelegram.Application.csproj", "{86841D33-17E2-4F80-925E-6C73D81D3D4C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyTelegram.Infrastructure", "src\Infrastructure\CrazyTelegram.Infrastructure\CrazyTelegram.Infrastructure.csproj", "{06BBE047-A1E1-43DE-A658-0505C115D61D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.Infrastructure", "src\Infrastructure\CrazyTelegram.Infrastructure\CrazyTelegram.Infrastructure.csproj", "{06BBE047-A1E1-43DE-A658-0505C115D61D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86841D33-17E2-4F80-925E-6C73D81D3D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86841D33-17E2-4F80-925E-6C73D81D3D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86841D33-17E2-4F80-925E-6C73D81D3D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86841D33-17E2-4F80-925E-6C73D81D3D4C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06BBE047-A1E1-43DE-A658-0505C115D61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{06BBE047-A1E1-43DE-A658-0505C115D61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06BBE047-A1E1-43DE-A658-0505C115D61D}.Release|Any CPU.ActiveCfg = Release|Any CPU

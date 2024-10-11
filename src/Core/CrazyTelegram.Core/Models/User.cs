@@ -8,15 +8,16 @@ namespace CrazyTelegram.Core.Models
 {
     public class User
     {
-        private User(Guid id, string userName, string passwordHash, string email)
+        private User(int id, string userName, string passwordHash, string email, string login)
         {
             Id = id;
             UserName = userName;
             PasswordHash = passwordHash;
             Email = email;
+            Login = login;
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string UserName { get; private set; }
 
@@ -24,10 +25,12 @@ namespace CrazyTelegram.Core.Models
 
         public string Email { get; private set; }
 
+        public string Login { get; set; }
 
-        public static User Create(Guid id, string userName, string passwordHash, string email)//создание юзера
+
+        public static User Create(int id, string userName, string passwordHash, string email, string login)//создание юзера
         {
-            return new User(id, userName, passwordHash, email);
+            return new User(id, userName, passwordHash, email, login);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using CrazyTelegram.DataAccess.Postgres.Entities;
+﻿using CrazyTelegram.DataAccess.Postgres.Configurations;
+using CrazyTelegram.DataAccess.Postgres.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrazyTelegram.DataAccess.Postgres
@@ -22,7 +23,7 @@ namespace CrazyTelegram.DataAccess.Postgres
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
