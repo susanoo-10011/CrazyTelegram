@@ -32,6 +32,5 @@ namespace CrazyTelegram.Core.Models
         {
             return new User(id, userName, passwordHash, email, login);
         }
-
     }
 }

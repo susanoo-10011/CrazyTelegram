@@ -1,12 +1,7 @@
-﻿using CrazyTelegram.Core.Models;
-using CrazyTelegram.DataAccess.Postgres;
-using CrazyTelegram.DataAccess.Postgres.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CrazyTelegram.Application.Interfaces;
+using CrazyTelegram.Core.Models;
+using CrazyTelegram.Infrastructure.Data;
+using CrazyTelegram.Infrastructure.Data.Entities;
 
 namespace CrazyTelegram.Infrastructure.Repositories
 {
@@ -17,23 +12,34 @@ namespace CrazyTelegram.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task<User> AddUser(User user)
+        
+        public async Task<User> Create(User user)
         {
-            UserEntity userEntity = new UserEntity();
-            userEntity.UserName = user.UserName;
-            userEntity.Email = user.Email;
-            userEntity.Login = user.Login;
-            userEntity.Password = user.PasswordHash;
-            userEntity.CreatedAt = DateTime.UtcNow;
-            await _dbContext.Users.AddAsync(userEntity);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                await _dbContext.Users.AddAsync(user);
+                await _dbContext.SaveChangesAsync();
 
-            return user;
+                return user;
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Task<User> GetUserById(string id)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<User> GetUserByLogin(string login)
+        {
+            var user = await _dbContext.Users.FindAsync(login);
+
+            return null;
         }
     }
 }

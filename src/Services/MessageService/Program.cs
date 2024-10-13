@@ -1,4 +1,4 @@
-using CrazyTelegram.DataAccess.Postgres;
+using CrazyTelegram.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace MessageService

@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Library\CrazyTelegram.DataAccess.Postgres\CrazyTelegram.DataAccess.Postgres.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\CrazyTelegram.Infrastructure\CrazyTelegram.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

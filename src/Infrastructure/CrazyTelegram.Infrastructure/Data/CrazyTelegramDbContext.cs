@@ -1,8 +1,8 @@
-﻿using CrazyTelegram.DataAccess.Postgres.Configurations;
-using CrazyTelegram.DataAccess.Postgres.Entities;
+﻿using CrazyTelegram.Infrastructure.Data.Configurations;
+using CrazyTelegram.Infrastructure.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CrazyTelegram.DataAccess.Postgres
+namespace CrazyTelegram.Infrastructure.Data
 {
     public class CrazyTelegramDbContext : DbContext
     {

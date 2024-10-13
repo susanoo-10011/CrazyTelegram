@@ -1,23 +1,22 @@
-﻿
-
-using CrazyTelegram.AuthenticationService.Models;
-using CrazyTelegram.DataAccess.Postgres;
-using CrazyTelegram.DataAccess.Postgres.Entities;
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using CrazyTelegram.Application.DTO;
+using CrazyTelegram.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CrazyTelegram.AuthenticationService.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]//спроси у чат гпт
+    [Route("api/[controller]")]
     public class UserController
     {
-        private readonly CrazyTelegramDbContext _dbContext;
+        private readonly IUserService _userService;
+        private readonly IUserRepository _userRepository;
 
-        public UserController(CrazyTelegramDbContext dbContext) 
+        public UserController(
+            IUserService userService,
+            IUserRepository userRepository) 
         {
-            _dbContext = dbContext;
+            _userService = userService;
+            _userRepository = userRepository;
         }
 
         [HttpPost("register")]
@@ -25,16 +24,19 @@ namespace CrazyTelegram.AuthenticationService.Controllers
         {
             try
             {
-                var foundUser = await _dbContext.Users.AnyAsync(u => u.Login == user.Login);
-                if(foundUser != null)
-                {
-                    return null;
-                }
-                return null;
+                var result = await _userService.AddUser(user);
+
+                return new OkObjectResult(result);
+
             }
             catch (Exception ex) 
             {
-                return null;
+                ProblemDetails details = new ProblemDetails();
+                details.Title = "Ошибка при регистрации";
+                details.Detail = $"Произошла ошибка при регистрации пользователя: {ex.Message}";
+                details.Status = 500;
+
+                return null ;
             }
         }
     }

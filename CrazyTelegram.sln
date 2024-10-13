@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.Authenticatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.MessageService", "src\Services\MessageService\CrazyTelegram.MessageService.csproj", "{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.DataAccess.Postgres", "src\Library\CrazyTelegram.DataAccess.Postgres\CrazyTelegram.DataAccess.Postgres.csproj", "{B9A3AF55-B075-48D9-B744-55B4A70D47AE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.Core", "src\Core\CrazyTelegram.Core\CrazyTelegram.Core.csproj", "{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyTelegram.Infrastructure", "src\Infrastructure\CrazyTelegram.Infrastructure\CrazyTelegram.Infrastructure.csproj", "{06BBE047-A1E1-43DE-A658-0505C115D61D}"
@@ -29,10 +27,6 @@ Global
 		{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626E8A1D-9DD3-4122-A331-C46ABEBF0F25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9A3AF55-B075-48D9-B744-55B4A70D47AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B22CEFC-2092-4F4E-8EC1-C115A81960F3}.Release|Any CPU.ActiveCfg = Release|Any CPU

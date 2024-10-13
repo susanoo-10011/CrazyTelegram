@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\CrazyTelegram.Core\CrazyTelegram.Core.csproj" />
-    <ProjectReference Include="..\..\Library\CrazyTelegram.DataAccess.Postgres\CrazyTelegram.DataAccess.Postgres.csproj" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\CrazyTelegram.Application\CrazyTelegram.Application.csproj" />
   </ItemGroup>
 
 </Project>

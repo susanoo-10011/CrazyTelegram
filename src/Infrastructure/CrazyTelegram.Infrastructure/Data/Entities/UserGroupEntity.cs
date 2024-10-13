@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CrazyTelegram.DataAccess.Postgres.Entities
+namespace CrazyTelegram.Infrastructure.Data.Entities
+
 {
     [Table("user_groups")]
     public class UserGroupEntity

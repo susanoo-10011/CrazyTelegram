@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrazyTelegram.DataAccess.Postgres.Entities
+namespace CrazyTelegram.Infrastructure.Data.Entities
+
 {
     [Table("message_recipients")]
     public class MessageRecipientEntity

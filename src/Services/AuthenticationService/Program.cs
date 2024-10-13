@@ -1,5 +1,5 @@
-
-using CrazyTelegram.DataAccess.Postgres;
+using CrazyTelegram.AuthenticationService;
+using CrazyTelegram.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthenticationService

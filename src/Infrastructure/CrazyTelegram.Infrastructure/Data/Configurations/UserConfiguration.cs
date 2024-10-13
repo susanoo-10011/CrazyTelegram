@@ -1,17 +1,16 @@
-﻿using CrazyTelegram.DataAccess.Postgres.Entities;
+﻿using CrazyTelegram.Infrastructure.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CrazyTelegram.DataAccess.Postgres.Configurations
+
+namespace CrazyTelegram.Infrastructure.Data.Configurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<UserEntity>
     {
-        public void Configure(EntityTypeBuilder<UserEntity> builder) 
+        public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
             builder
                 .HasKey(e => e.Id);
-
-
         }
     }
 }

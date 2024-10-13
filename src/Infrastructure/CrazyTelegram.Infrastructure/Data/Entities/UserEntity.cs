@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CrazyTelegram.DataAccess.Postgres.Entities
+namespace CrazyTelegram.Infrastructure.Data.Entities
+
 {
     [Table("users")]
     public class UserEntity
@@ -27,7 +28,7 @@ namespace CrazyTelegram.DataAccess.Postgres.Entities
 
         [Timestamp]
         [Column("create_at")]
-        public DateTime CreatedAt { get; set; } = DateTime.MinValue;
+        public DateTime CreatedAt { get; set; }
 
     }
 }
