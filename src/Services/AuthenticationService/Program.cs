@@ -1,4 +1,6 @@
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using CrazyTelegram.DataAccess.Postgres;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +13,33 @@ namespace AuthenticationService
             var builder = WebApplication.CreateBuilder(args);
             var configuration = builder.Configuration;
 
+            // Добавьте конфигурацию JWT
+            var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+            var key = jwtSettings["Key"];
+            var issuer = jwtSettings["Issuer"];
+            var audience = jwtSettings["Audience"];
+
+            // Настройка аутентификации
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = issuer,
+                    ValidAudience = audience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+                };
+            });
+
+            // Добавление других служб
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -23,6 +52,7 @@ namespace AuthenticationService
 
             var app = builder.Build();
 
+            // Настройка Swagger
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -31,6 +61,8 @@ namespace AuthenticationService
 
             app.UseHttpsRedirection();
 
+            // Включаем аутентификацию и авторизацию
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

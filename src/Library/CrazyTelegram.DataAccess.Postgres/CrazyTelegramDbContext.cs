@@ -7,7 +7,7 @@ namespace CrazyTelegram.DataAccess.Postgres
     public class CrazyTelegramDbContext : DbContext
     {
         // add-migration update -contex CrazyTelegramDbContext \\
-        // update-database \\
+        // \\\update-database \\
 
         //-----------------------------------------------------\\
         public CrazyTelegramDbContext(DbContextOptions<CrazyTelegramDbContext> options) : base(options)
