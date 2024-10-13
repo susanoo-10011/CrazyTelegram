@@ -17,6 +17,12 @@ namespace CrazyTelegram.Core.Models
             Login = login;
         }
 
+        public User(string login, string passwordHash)
+        {
+            Login = login;
+            PasswordHash = passwordHash;
+        }
+
         public int Id { get; set; }
 
         public string UserName { get; private set; }

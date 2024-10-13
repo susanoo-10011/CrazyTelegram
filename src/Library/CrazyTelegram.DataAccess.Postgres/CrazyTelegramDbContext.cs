@@ -12,14 +12,11 @@ namespace CrazyTelegram.DataAccess.Postgres
         //-----------------------------------------------------\\
         public CrazyTelegramDbContext(DbContextOptions<CrazyTelegramDbContext> options) : base(options)
         {
-           // Database.Migrate();
+            //add-migration update -contex CrazyTelegramDbContextDatabase.Migrate();
         }
 
         public DbSet<UserEntity> Users { get; set; }
-        public DbSet<GroupEntity> Groups { get; set; }
-        public DbSet<MessageEntity> Messages { get; set; }
-        public DbSet<MessageRecipientEntity> MessageRecipients { get; set; }
-        public DbSet<UserGroupEntity> UserGroups { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

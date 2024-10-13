@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrazyTelegram.DataAccess.Postgres;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace CrazyTelegram.Application.Services
     public class UsersService
     {
 
-        public UsersService(CrazyTelegramDbContext) 
+        public UsersService(CrazyTelegramDbContext test) 
         {
 
         }

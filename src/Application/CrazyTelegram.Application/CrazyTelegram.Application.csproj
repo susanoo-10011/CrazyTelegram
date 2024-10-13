@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Library\CrazyTelegram.DataAccess.Postgres\CrazyTelegram.DataAccess.Postgres.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -25,9 +25,9 @@ namespace CrazyTelegram.DataAccess.Postgres.Entities
         [Column("login")]
         public string Login { get; set; } = string.Empty;
 
-        [Timestamp]
+        [Required]
         [Column("create_at")]
-        public DateTime CreatedAt { get; set; } = DateTime.MinValue;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     }
 }
