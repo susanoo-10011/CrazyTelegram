@@ -10,6 +10,7 @@ namespace CrazyTelegram.Infrastructure.Mapping
         {
             config.NewConfig<User, UserDTO>()
                 .RequireDestinationMemberSource(true);
+
         }
     }
 }

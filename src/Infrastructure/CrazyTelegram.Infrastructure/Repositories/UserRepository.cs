@@ -17,7 +17,7 @@ namespace CrazyTelegram.Infrastructure.Repositories
             _dbContext = dbContext;
         }
         
-        public async Task<User> Create(UserDTO user)
+        public async Task<User> Create(User user)
         {
             try
             {
@@ -25,7 +25,6 @@ namespace CrazyTelegram.Infrastructure.Repositories
                 await _dbContext.SaveChangesAsync();
 
                 return user.Adapt<User>();
-
             }
             catch (Exception ex)
             {

@@ -1,4 +1,7 @@
+using CrazyTelegram.Application.Services;
 using CrazyTelegram.AuthenticationService;
+using CrazyTelegram.AuthenticationService.Controllers;
+using CrazyTelegram.Infrastructure.Repositories;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

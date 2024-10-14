@@ -1,16 +1,10 @@
-﻿using AuthenticationService;
-using CrazyTelegram.Application.Interfaces;
+﻿using CrazyTelegram.Application.Interfaces;
 using CrazyTelegram.Application.Services;
+using CrazyTelegram.Infrastructure;
 using CrazyTelegram.Infrastructure.Data;
 using CrazyTelegram.Infrastructure.Repositories;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System;
 
 namespace CrazyTelegram.AuthenticationService
 {
@@ -37,11 +31,14 @@ namespace CrazyTelegram.AuthenticationService
 
             // Регистрация сервисов
             services.AddScoped<IUserService, UserService>(); // Scoped Для зависимостей, которые могут измениться между запросами
+            services.AddScoped<IJWTProvider, JwtProvider>();
             services.AddScoped<IUserRepository, UserRepository>();
 
             // Настройка DbContext
             services.AddDbContext<CrazyTelegramDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString(nameof(CrazyTelegramDbContext))));
+
+            services.AddProblemDetails();
 
             // Другие настройки DI...
         }

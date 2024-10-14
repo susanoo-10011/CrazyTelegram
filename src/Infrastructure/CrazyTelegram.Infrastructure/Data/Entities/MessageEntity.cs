@@ -8,12 +8,11 @@ namespace CrazyTelegram.Infrastructure.Data.Entities
     public class MessageEntity
     {
         [Key]
-
         public int Id { get; set; }
 
         [Required]
         [Column("subject")]
-        public string Subject { get; set; }
+        public required string Subject { get; set; }
 
         [Required]
         [Column("creator_id")]
@@ -22,11 +21,11 @@ namespace CrazyTelegram.Infrastructure.Data.Entities
 
         [Required]
         [Column("message_body")]
-        public string MessageBody { get; set; }
+        public required string MessageBody { get; set; }
 
         [Column("create_date")]
         public DateTime CreateDate { get; set; }
 
-        public UserEntity User { get; set; }
+        public required UserEntity User { get; set; }
     }
 }

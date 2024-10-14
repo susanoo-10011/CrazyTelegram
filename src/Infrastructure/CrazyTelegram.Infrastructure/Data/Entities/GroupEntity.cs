@@ -11,7 +11,7 @@ namespace CrazyTelegram.Infrastructure.Data.Entities
 
         [Required]
         [Column("name")]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         [Column("create_date")]
         public DateTime CreatedDate { get; set; }
