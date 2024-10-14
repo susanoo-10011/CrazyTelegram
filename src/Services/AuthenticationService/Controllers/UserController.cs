@@ -9,34 +9,30 @@ namespace CrazyTelegram.AuthenticationService.Controllers
     public class UserController
     {
         private readonly IUserService _userService;
-        private readonly IUserRepository _userRepository;
 
         public UserController(
-            IUserService userService,
-            IUserRepository userRepository) 
+            IUserService userService) 
         {
             _userService = userService;
-            _userRepository = userRepository;
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult> Register([FromBody] UserDTO user)
+        public async Task<IResult> Register([FromBody] UserDTO user)
         {
             try
             {
                 var result = await _userService.AddUser(user);
 
-                return new OkObjectResult(result);
+                return Results.Ok(result);
 
             }
             catch (Exception ex) 
             {
-                ProblemDetails details = new ProblemDetails();
-                details.Title = "Ошибка при регистрации";
-                details.Detail = $"Произошла ошибка при регистрации пользователя: {ex.Message}";
-                details.Status = 500;
-
-                return null ;
+                return Results.BadRequest(new
+                {
+                    Error = "Произошла ошибка при регистрации",
+                    Message = ex.Message
+                });
             }
         }
     }

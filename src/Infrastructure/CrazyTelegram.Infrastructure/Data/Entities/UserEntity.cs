@@ -26,9 +26,7 @@ namespace CrazyTelegram.Infrastructure.Data.Entities
         [Column("login")]
         public string Login { get; set; } = string.Empty;
 
-        [Timestamp]
         [Column("create_at")]
-        public DateTime CreatedAt { get; set; }
-
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

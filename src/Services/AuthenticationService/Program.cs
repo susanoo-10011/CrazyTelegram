@@ -1,19 +1,31 @@
 using CrazyTelegram.AuthenticationService;
-using CrazyTelegram.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
 namespace AuthenticationService
 {
     public class Program
     {
+
         public static void Main(string[] args)
+        {
+            BuildWebHost(args).Run();
+        }
+        public static IWebHost BuildWebHost(string[] args) => WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().Build();
+
+        /*public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
             var configuration = builder.Configuration;
 
             builder.Services.AddControllers();
+
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             builder.Services.AddDbContext<CrazyTelegramDbContext>(
                 options =>
@@ -42,6 +54,6 @@ namespace AuthenticationService
                 .Options);
 
             app.Run();
-        }
+        }*/
     }
 }
