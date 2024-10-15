@@ -26,6 +26,9 @@ namespace CrazyTelegram.AuthenticationService.Controllers
             return Ok(result);
         }
 
+
+
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDTO user)
         {
