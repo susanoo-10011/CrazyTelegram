@@ -1,5 +1,6 @@
 ﻿using CrazyTelegram.Application.Interfaces;
 using CrazyTelegram.Application.Services;
+using CrazyTelegram.Core.Models;
 using CrazyTelegram.Infrastructure;
 using CrazyTelegram.Infrastructure.Data;
 using CrazyTelegram.Infrastructure.Repositories;
@@ -21,6 +22,7 @@ namespace CrazyTelegram.AuthenticationService
         public void ConfigureServices(IServiceCollection services)
         {
             // Настройка Dependency Injection
+            services.Configure<MySettings>(Configuration.GetSection("MySettings"));
             services.AddControllers();
 
             // Добавление Swagger (опционально, но рекомендуется для документации API)

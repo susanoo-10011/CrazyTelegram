@@ -402,4 +402,3 @@ FodyWeavers.xsd
 # Migrations
 
 Migrations/
-/src/Core/CrazyTelegram.Core/Models/MySettings.cs
